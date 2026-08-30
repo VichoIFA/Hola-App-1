@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Saludador</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input
+      label="Tu nombre"
+      labelPlacement="floating"
+      placeholder="Escribe tu nombre"
+      [(ngModel)]="nombre"
+    ></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" (click)="saludar()">Saludar</ion-button>
+
+  @if (saludo) {
+    <h1 class="ion-text-center">{{ saludo }}</h1>
+  }
+
+  <!-- Paso 2: navega hacia adelante, a la ruta /acerca -->
+  <ion-button expand="block" fill="outline" routerLink="/acerca">
+    Acerca de
+  </ion-button>
+</ion-content>
