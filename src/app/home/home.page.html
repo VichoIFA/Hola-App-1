@@ -13,15 +13,27 @@
       [(ngModel)]="nombre"
     ></ion-input>
   </ion-item>
+  
+  <ion-item>
+    <ion-input
+      label="Tu ciudad"
+      labelPlacement="floating"
+      placeholder="Escribe tu ciudad"
+      [(ngModel)]="ciudad"
+    ></ion-input>
+  </ion-item>
 
-  <ion-button expand="block" (click)="saludar()">Saludar</ion-button>
+  <ion-button expand="block" (click)="saludar()" [disabled]="!nombre">Saludar</ion-button>
 
   @if (saludo) {
     <h1 class="ion-text-center">{{ saludo }}</h1>
   }
 
   <!-- Paso 2: navega hacia adelante, a la ruta /acerca -->
-  <ion-button expand="block" fill="outline" routerLink="/acerca">
-    Acerca de
-  </ion-button>
+  @if (visible) {
+    <ion-button expand="block" fill="outline" routerLink="/acerca" >
+      Acerca de
+    </ion-button>
+  }
+
 </ion-content>
